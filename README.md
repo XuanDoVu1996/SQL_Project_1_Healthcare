@@ -1,6 +1,6 @@
 # SQL Project _ Healthcare Database
 
-1. Database Idea:
+**1. Database Idea:**
 
 We created a database that records the healthcare information of patients in fictional hospital named Happiness. The database reflects the healthcare industry’s key aspects in the 
 following ways:
@@ -21,4 +21,14 @@ and nurses to provide appropriate effective medical care.
 - Insurance information: The database includes tables for insurance companies and insurance 
 coverage that patients are entitled to. With insurance, patients can have financial protection as it 
 helps cover the cost of medical services, treatments, and medications for patients. Insurance 
-companies vary based on the hospital’s branch from which patients get treatment.  
+companies vary based on the hospital’s branch from which patients get treatment.
+
+**2. Entity Relationship (ER) Model**
+
+The database contains 12 tables, each designed with different attributes to capture and manage 
+healthcare-related data. The ER model for our database is illustrated in the following figure. Each 
+entity in database includes entity name, attributes, attributes’ data types, relationships with other 
+entities, and primary keys and foreign keys used to link two entities together. Relationships 
+between entities in our database include one-to-one, many-to-one/one-to-many, and many-to￾many relationships.
+
+
