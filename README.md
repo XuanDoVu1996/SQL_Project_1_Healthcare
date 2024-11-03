@@ -33,6 +33,6 @@ entity in database includes entity name, attributes, attributes’ data types, r
 entities, and primary keys and foreign keys used to link two entities together. Relationships 
 between entities in our database include one-to-one, many-to-one, one-to-many, and many-to-many relationships.
 
-<img src="images/ER_model.jpg" alt="ER_Model" width="300"/>
+<img src="images/ER_model.jpg" alt="ER_Model" width="900"/>
 
 
