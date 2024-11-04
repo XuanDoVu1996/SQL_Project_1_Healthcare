@@ -1,0 +1,43 @@
+**4. Description of each table in database**
+- `HEALTHCARE_INFO` table within the database represents patient healthcare records, 
+providing detailed information about patients, hospital, and insurer. The `ADMISSION_ID` 
+attribute is designated as the primary key which uniquely identifies hospital admission information 
+of each patient. Additionally, attributes including `REGION_ID`, `COUNTRY_ID`, `CITY_ID`, 
+`DOCTOR_ID`, `HOSPITAL_ID`, and `INSURER_ID` serve as foreign keys that reference other 
+relevant tables. These attributes facilitate various relationships, including one-to-one, many-to-one/one-to-many relationships between `HEALTHCARE_INFO` table with other tables in 
+database.
+- `BLOOD_TYPE` table demonstrates information of all possible blood type of patients. The 
+primary and foreign key of this table is `BLOOD_TYPE_ID` attribute which links 
+`BLOOD_TYPE` table with `PATIENT` table. It is used to capture blood information of each 
+patient.
+- `INVOICE` table shows details of billing amount and invoice information of each patient in our 
+database. The `INVOICE_ID` acts as primary key while `ADMISSION_ID` serves as foreign key 
+to associate `INVOICE` table with `HEALTHCARE_INFO` table.
+- `DOCTOR` table in the database contains details about doctors and the hospital which they work 
+in, with attributes `DOCTOR_ID` serving as primary and foreign key to link to 
+`HEALTHCARE_INFO` table and reflect the information of doctor for certain patient.
+- `HOSPITAL` table in the database represents data regarding branches of hospital and their 
+respective location. The attributes ` HOSPITAL _ID` functions as both the primary and foreign 
+key establishing a connection with `HEALTHCARE_INFO` table, which provides the descriptive 
+information of hospital in which patients are admitted.
+- `PATIENT` table provides demographic information about patients such as name, address, age, 
+gender, blood type. In this table, column `PATIENT_ID` acts as primary and foreign key to link 
+to `HEALTHCARE_INFO` table while `BLOOD_TYPE_ID` serves as foreign key to associate 
+the table with `BLOOD_TYPE` table.
+- `MEDICAL_CONDITION` table demonstrates data regarding medical conditions of each 
+patient. `ADMISSION_ID` column functions as a primary key within the table and also acts as a 
+foreign key to associate the table with `HEALTHCARE_INFO` table, providing more detailed 
+information of each patient who receives treatment at the hospital.
+- `INSURER` table contains details about insurance companies and their respective locations. The 
+primary and foreign key attribute, `INSURER_ID`, establishes a connection between the 
+`INSURER` table and the `HEALTHCARE_INFO` table. This association allows for the retrieval 
+of information regarding insurance companies that offer coverage for medical expenses incurred 
+by patients.
+- `COVERAGE` table in the database shows data about insurance coverage that patients are 
+entitled to. The attributes ` COVERAGE_ID` serves as primary key while `ADMISSION_ID` 
+serve as foreign key that is used to link to `HEALTHCARE_INFO` table.
+- The tables `REGION`, `COUNTRY`, and `CITY` provide information about the regions, 
+countries, cities in which the hospital is located. These tables are linked to the 
+`HEALTHCARE_INFO` table through the primary and foreign keys `REGION_ID`, 
+`COUNTRY_ID`, and `CITY_ID`, allowing hospitals to be associated with specific region, 
+country, and city. 
