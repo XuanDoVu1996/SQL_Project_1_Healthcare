@@ -1,8 +1,14 @@
 # SQL Project _ Healthcare Database
 
+**GENERAL INFORMATION**
+- :bulb: Purpose: We created a database that records the healthcare information of patients in fictional hospital named Happiness.
+- List of files:
+  + 
+
+
 **1. Database Idea:**
 
-We created a database that records the healthcare information of patients in fictional hospital named Happiness. The database reflects the healthcare industry’s key aspects in the 
+The database reflects the healthcare industry’s key aspects in the 
 following ways:
 - Healthcare information of patients: The database contains tables of patient healthcare information which are designed to store detailed patient records including personal information, demographics, medical history, blood type and health insurance information. Recording and maintaining patient 
 healthcare information is crucial for providing medical care. It allows the healthcare provider to 
