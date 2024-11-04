@@ -1,6 +1,6 @@
 # SQL Project _ Healthcare Database
 
-**:information_source: GENERAL INFORMATION**
+## :information_source: GENERAL INFORMATION
 - :bulb: Purpose: We created a database that records the healthcare information of patients in fictional hospital named Happiness.
 - :file_folder: List of files:
   + `ER_model.jpg` : the visualization of entity relationship model
@@ -8,7 +8,7 @@
   + `sql_scripts.txt` : sql scripts to create the database
   + `description_of_tables.txt`: the description of variables in tables
 
-**:one: Database Idea:**
+## :one: Database Idea:
 
 The database reflects the healthcare industry’s key aspects in the following ways:
 
@@ -38,7 +38,7 @@ companies vary based on the hospital’s branch from which patients get treatmen
 
 <P style="page-break-before: always">
 
-**:two: Entity Relationship (ER) Model**
+##:two: Entity Relationship (ER) Model
 
 The database contains 12 tables, each designed with different attributes to capture and manage 
 healthcare-related data. The ER model for our database is illustrated in the following figure. Each 
@@ -50,7 +50,7 @@ between entities in our database include one-to-one, many-to-one, one-to-many, a
 
 <P style="page-break-before: always">
 
-**:three: Description of each relationship (between tables)**
+##:three: Description of each relationship (between tables)
 
 The association among entities in our database is designed in different ways. The database includes 
 three main types of relationships: one-to-one, one-to-many/many-to-one, and many-to-many.
