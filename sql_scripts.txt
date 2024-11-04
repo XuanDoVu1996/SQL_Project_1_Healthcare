@@ -1,0 +1,252 @@
+---#1.Create HEALTHCARE_INFO TABLE
+CREATE TABLE HEALTHCARE_INFO (
+	ADMISSION_ID INT NOT NULL,
+	PATIENT_ID	INT NOT NULL,
+	FIRST_NAME	CHAR(128) NOT NULL,
+	LAST_NAME	CHAR(128) NOT NULL,
+	REGION_ID	INT NOT NULL,
+	COUNTRY_ID	INT NOT NULL,
+	CITY_ID	INT NOT NULL,
+	DOCTOR_ID	INT NOT NULL,
+	HOSPITAL_ID	INT NOT NULL,
+	DATE_OF_ADMISSION	DATE NOT NULL,
+	DATE_OF_DISCHARGE	DATE NOT NULL,
+	INSURER_ID	INT NOT NULL,
+	PRIMARY KEY("ADMISSION_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO HEALTHCARE_INFO
+	VALUES 
+		(1,1,'Kate','Winslet',1,1,1,5,4,'2/3/2021','4/3/2021',1),
+		(2,2,'Tom','Cruise',2,2,3,3,1,'4/6/2022','6/6/2022',3),
+		(3,3,'Taylor','Swift',2,2,4,1,2,'3/3/2023','3/3/2023',3),
+		(4,4,'Leslie','Caron',1,4,2,2,3,'1/6/2019','2/6/2019',2),
+	       	(5,5,'Sandra','Bullock',2,2,5,4,1,'4/5/2023','4/5/2023',4),
+           	(6,2,'Tom','Cruise',2,2,4,3,2,'5/8/2023','10/8/2023',4),
+           	(7,1,'Kate','Winslet',1,1,1,5,4,'2/1/2023','2/1/2023',1);
+			
+---#2.Create PATIENT TABLE
+CREATE TABLE PATIENT (
+	PATIENT_ID	INT NOT NULL,
+	FIRST_NAME	CHAR(128) NOT NULL,
+	LAST_NAME	CHAR(128) NOT NULL,
+	ADDRESS	CHAR(128) NOT NULL,
+	AGE	INT NOT NULL,
+	GENDER	CHAR(128) NOT NULL,
+	BLOOD_TYPE_ID CHAR(128) NOT NULL,	
+	PRIMARY KEY("PATIENT_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO PATIENT
+	VALUES 
+		(1,'Kate','Winslet','202 Castle St, Edinburgh EH2 3BN, UK',46,'F',1),
+		(2,'Tom','Cruise','101 Pine St, San Francisco, USA',59,'M',1),
+		(3,'Taylor','Swift','707 Hemlock St, Denver, USA',32,'F',2),
+		(4,'Leslie','Caron','303 Rue de la Roquette, Paris 75011, France',90,'F',3),
+	    	(5,'Sandra','Bullock','404 Spruce St, Seattle, USA',57,'F',4);
+			
+---#3.Create BLOOD TYPE TABLE
+CREATE TABLE BLOOD_TYPE (
+	BLOOD_TYPE_ID	INT NOT NULL,
+	BLOOD_TYPE	CHAR(128) NOT NULL,	
+	PRIMARY KEY("BLOOD_TYPE_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO BLOOD_TYPE
+	VALUES 
+		(1, 'A+'),
+		(2,'A-'),
+		(3,'B+'),
+		(4,'B-'),
+	    	(5,'AB+'),
+		(6,'AB-'),
+		(7,'O+'),
+		(8,'O-')
+		;
+
+---#4.Create REGION table
+CREATE TABLE REGION (
+	REGION_ID	INT NOT NULL,
+	REGION_NAME	CHAR(128) NOT NULL,
+	PRIMARY KEY("REGION_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO REGION
+	VALUES 
+		(1, 'EUROPE'),
+		(2,'NORTH AMERICA'),
+		(3,'SOUTH AMERICA'),
+		(4,'ASIA'),
+		(5,'AFRICA'),
+	    	(6,'AUSTRALIA'),
+		(7,'MIDDLE EAST')
+		;
+
+---#5.Create Country table
+CREATE TABLE COUNTRY (
+	COUNTRY_ID	INT NOT NULL,
+	COUNTRY_NAME	CHAR(128) NOT NULL,
+	REGION_ID	INT NOT NULL,
+	PRIMARY KEY("COUNTRY_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO COUNTRY
+	VALUES 
+		(1, 'UK', 1),
+		(2,'USA', 2),
+		(3,'GERMANY', 1),
+		(4,'FRANCE', 1),
+	    	(5,'JAPAN', 4),
+		(6,'SINGAPORE', 4)
+		;
+		
+---#6.Create City table
+CREATE TABLE CITY (
+	CITY_ID	INT NOT NULL,
+	CITY_NAME	CHAR(128) NOT NULL,
+	COUNTRY_ID	INT NOT NULL,
+	PRIMARY KEY("CITY_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO CITY
+	VALUES 
+		(1, 'Edinburgh', 1),
+		(2,'Paris', 4),
+		(3,'San Francisco', 2),
+		(4,'Denver', 2),
+	    	(5,'Seattle', 2),
+		(6,'Tokyo', 5),
+		(7,'Singapore', 6),
+		(8,'Berlin', 3)		
+		;
+		
+---#7.Create Hospital table
+CREATE TABLE HOSPITAL (
+	HOSPITAL_ID	INT NOT NULL,
+	HOSPITAL_NAME	CHAR(128) NOT NULL,
+	CITY_ID	INT NOT NULL,
+	PRIMARY KEY("HOSPITAL_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO HOSPITAL
+	VALUES 
+		(1, 'Happiness Hospital - San Francisco branch', 3),
+		(2,'Happiness Hospital - Denver branch', 4),
+		(3,'Happiness Hospital - Paris branch', 2),
+		(4,'Happiness Hospital - Edinburgh branch', 1),
+	    	(5,'Happiness Hospital - Seattle branch', 5),
+		(6,'Happiness Hospital - Tokyo branch', 6),
+		(7,'Happiness Hospital - Singapore branch', 7),
+		(8,'Happiness Hospital - Berlin branch', 8)		
+		;
+
+---#8.Create Doctor table
+CREATE TABLE DOCTOR (
+	DOCTOR_ID	INT NOT NULL,
+	DOCTOR_NAME	CHAR(128) NOT NULL,
+	HOSPITAL_ID	INT NOT NULL,
+	PRIMARY KEY("DOCTOR_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO DOCTOR
+	VALUES 
+		(1, 'Micheal Park', 1),
+		(2,'Harry Styles', 4),
+		(3,'Maria Winsle', 3),
+		(4,'Julia Chelsyn', 2),
+	    	(5,'Juio Watern', 5),
+		(6,'Tomo Yamaguchi', 6),
+		(7,'Christine Meline', 7),
+		(8,'Erik Harisson', 8)		
+		;
+
+---#9.Create Insurer table
+CREATE TABLE INSURER (
+	INSURER_ID	INT NOT NULL,
+	INSURER_NAME	CHAR(128) NOT NULL,
+	COUNTRY_ID	INT NOT NULL,
+	PRIMARY KEY("INSURER_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO INSURER
+	VALUES 
+		(1, 'UnitedHealth Group', 1),
+		(2,'Anthem, Inc.', 4),
+		(3,'Cigna Corporation', 3),
+		(4,'Kaiser Permanente', 2),
+	    	(5,'Molina Healthcare, Inc.', 5)	
+		;
+
+---#10.Create Medical Condition table
+CREATE TABLE MEDICAL_CONDITION (
+	ADMISSION_ID	INT NOT NULL,
+	PATIENT_ID	INT NOT NULL,
+	MEDICAL_CONDITION	CHAR(128) NOT NULL,
+	PRIMARY KEY("ADMISSION_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO MEDICAL_CONDITION
+	VALUES 
+		(1, 1,'Asthma'),
+		(2, 2, 'Arthritis'),
+		(3, 3, 'Depression'),
+		(4, 4, 'Depression'),
+	    	(5, 5, 'Heart Disease'),
+		(6, 2, 'Depression'),
+		(7, 1, 'Asthma')		
+		;
+
+---#11.Create Coverage table
+CREATE TABLE COVERAGE (
+	COVERAGE_ID	INT NOT NULL,
+	ADMISSION_ID	INT NOT NULL,
+	INSURER_ID	INT NOT NULL,
+	PATIENT_ID	INT NOT NULL,
+	START_DATE	DATE NOT NULL,
+	END_DATE	DATE NOT NULL,
+	PRIMARY KEY("COVERAGE_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO COVERAGE
+	VALUES 
+		(1, 1, 1, 1, '1/1/2021', '1/1/2022'),
+		(2, 2, 3, 2, '1/4/2022', '1/4/2023'),
+		(3, 3, 3, 3, '1/2/2023', '1/2/2024'),
+		(4, 4, 2, 4, '5/5/2019', '5/5/2020'),
+	    	(5, 5, 4, 5, '23/2/2023', '23/2/2024'),
+		(6, 6, 4, 2, '12/2/2023', '12/2/2024'),
+		(7, 7, 1, 1, '2/1/2023', '2/1/2024')		
+		;	
+
+---#12.Create INVOICE table
+CREATE TABLE INVOICE (
+	INVOICE_ID	INT NOT NULL,
+	ADMISSION_ID	INT NOT NULL,
+	PATIENT_ID	INT NOT NULL,
+	TOTAL_AMOUNT	INT NOT NULL,
+	INVOICE_DATE	DATE NOT NULL,
+	PRIMARY KEY("INVOICE_ID")
+);
+
+--Insert value into the TABLE
+INSERT INTO INVOICE
+	VALUES 
+		(1, 1, 1, 1500, '4/3/2021'),
+		(2, 2, 2, 1120, '6/6/2022'),
+		(3, 3, 3, 900, '3/3/2023'),
+		(4, 4, 4, 1120, '2/6/2019'),
+	    	(5, 5, 5, 1000, '4/5/2023'),
+		(6, 6, 2, 4000, '10/8/2023'),
+		(7, 7, 1, 100, '2/1/2023')		
+		;	
